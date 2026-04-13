@@ -1,0 +1,36 @@
+{
+  "name": "gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ENABLE_LOCAL_SETTLEMENT_SIMULATION=true tsx watch src/index.ts",
+    "dev:sim": "ENABLE_LOCAL_SETTLEMENT_SIMULATION=true tsx watch src/index.ts",
+    "dev:real": "ENABLE_LOCAL_SETTLEMENT_SIMULATION=false tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "validate:production": "tsx src/validate-production-config.ts",
+    "lint": "tsc --noEmit",
+    "test": "AXON_GATEWAY_DATA_FILE=/tmp/axon-gateway-vitest.json vitest run",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@axon/shared": "0.1.0",
+    "@fastify/cors": "^10.0.1",
+    "@prisma/client": "^5.22.0",
+    "@stellar/stellar-sdk": "^15.0.1",
+    "dotenv": "^17.4.2",
+    "fastify": "^5.0.0",
+    "uuid": "^11.0.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.17",
+    "prisma": "^5.22.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
+  }
+}

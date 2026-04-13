@@ -1,0 +1,6 @@
+[workspace]
+members = [
+  "marketplace",
+  "payment_router"
+]
+resolver = "2"

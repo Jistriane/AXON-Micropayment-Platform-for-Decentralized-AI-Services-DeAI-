@@ -1,0 +1,35 @@
+{
+  "name": "axon-deai-platform",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AXON - Micropayment Platform for Decentralized AI Services",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace services/gateway & npm run dev --workspace apps/web",
+    "dev:sim": "npm run dev:sim --workspace services/gateway & npm run dev --workspace apps/web",
+    "dev:real": "npm run dev:real --workspace services/gateway & npm run dev --workspace apps/web",
+    "build": "npm run build --workspace packages/shared && npm run build --workspace services/gateway && npm run build --workspace apps/web",
+    "lint": "npm run lint --workspace services/gateway && npm run lint --workspace apps/web",
+    "test": "npm run test --workspace services/gateway",
+    "test:contracts:soroban": "cd contracts/soroban && cargo test",
+    "validate:gateway:production": "npm run validate:production --workspace services/gateway",
+    "deploy:soroban:testnet": "bash ./scripts/deploy-soroban-testnet.sh",
+    "smoke:gateway": "bash ./scripts/smoke-gateway.sh",
+    "smoke:inference:upstream": "bash ./scripts/smoke-inference-upstream.sh",
+    "smoke:inference:upstream:ci": "bash ./scripts/ci-inference-upstream.sh",
+    "smoke:gateway:ci": "bash ./scripts/ci-gateway-e2e.sh",
+    "smoke:web:ci": "bash ./scripts/ci-web-e2e.sh",
+    "test:e2e:web": "playwright test --config=playwright.config.ts",
+    "verify:all": "bash ./scripts/ci-full.sh"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

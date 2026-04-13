@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm install
+      - name: Build shared
+        run: npm run build --workspace packages/shared
+      - name: Build gateway
+        run: npm run build --workspace services/gateway
+      - name: Test gateway
+        run: npm run test --workspace services/gateway
+      - name: Smoke gateway e2e
+        run: npm run smoke:gateway:ci
+      - name: Build web
+        run: npm run build --workspace apps/web
+      - name: Smoke web e2e
+        run: npm run smoke:web:ci
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+      - name: Test web ui e2e
+        run: npm run test:e2e:web
+
+  soroban:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Test contracts
+        run: |
+          cd contracts/soroban
+          cargo test

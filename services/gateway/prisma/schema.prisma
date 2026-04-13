@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AiModel {
+  id              String  @id @default(cuid())
+  providerAddress String
+  name            String
+  description     String
+  endpoint        String
+  priceMicrounit  Int
+  active          Boolean @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  payments PaymentRecord[]
+
+  @@index([providerAddress])
+  @@index([active])
+}
+
+model PaymentRecord {
+  id                      String  @id @default(cuid())
+  modelId                 String
+  callerAddress           String
+  amountMicrounit         Int
+  platformFeeMicrounit    Int
+  providerAmountMicrounit Int
+  txHash                  String  @unique
+  paymentRef              String  @unique
+  success                 Boolean @default(true)
+  error                   String?
+  txStatus                String  @default("submitted")
+  txStatusUpdatedAt       DateTime @default(now())
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+
+  // Relations
+  model AiModel @relation(fields: [modelId], references: [id], onDelete: Cascade)
+
+  @@index([modelId])
+  @@index([callerAddress])
+  @@index([createdAt])
+}

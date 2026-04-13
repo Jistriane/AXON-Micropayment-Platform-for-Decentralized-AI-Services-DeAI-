@@ -1,0 +1,17 @@
+node_modules
+.next
+dist
+coverage
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.axon
+
+# Database files (Prisma)
+*.db
+*.db-shm
+*.db-wal
+services/gateway/.env.local
+services/gateway/dev.db*
