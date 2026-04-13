@@ -113,17 +113,6 @@ Complete documentation reference for the DeAI platform.
 4. Post-incident: Document and update tests
 ```
 
-### 6) I want automatic frontend deploy on GitHub Pages
-
-```
-1. Confirm workflow exists: .github/workflows/deploy-pages.yml
-2. Push changes to main
-3. Check Actions run: "Deploy Frontend to GitHub Pages"
-4. Confirm repository Pages source is "GitHub Actions"
-5. Validate public URL:
-   https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
-```
-
 ---
 
 ## Document Details
@@ -277,7 +266,7 @@ When you add a new feature or fix, please:
 
 ## Document Version
 
-**Last Updated:** 2026-04-13
+**Last Updated:** 2026-04-12
 **Gateway Version:** 0.1.0
 **Status:** ✅ Production Ready
 
