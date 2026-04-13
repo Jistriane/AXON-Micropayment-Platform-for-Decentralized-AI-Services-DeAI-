@@ -138,6 +138,30 @@ After recovery:
 
 ## 6) Troubleshooting guide
 
+### Frontend deployment URL unavailable or stale
+
+**Target URL:**
+
+- https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
+
+**Symptoms:**
+
+- Page returns 404 or does not load
+- Page loads but appears stale compared to latest expected UI
+
+**Diagnosis:**
+
+1. Open the URL directly in an incognito window.
+2. Verify static assets (logo/icon/chunks) are loading without 404.
+3. Confirm core sections are present: Marketplace, Publish model, Payment history, Operation status.
+4. Confirm on-chain tx links resolve to Stellar Expert from payment history entries.
+
+**Resolution:**
+
+- Re-run the frontend publish flow used by your team/repository settings.
+- Clear browser cache and hard refresh after redeploy.
+- Re-validate using the same checklist above.
+
 ### Gemini inference returns 503 INFERENCE_UNAVAILABLE
 
 **Symptoms:**

@@ -293,6 +293,20 @@ npm run dev:real  # Web + gateway using only real settlement backends
 - Frontend: http://localhost:3000
 - Gateway: http://localhost:8080/health
 
+## Frontend deployment (active)
+
+Current public frontend deployment:
+
+- Platform: GitHub Pages
+- URL: https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
+- Status: online and functional (verified on 2026-04-13)
+
+Validation checklist used:
+
+- app loads with marketplace/publish/payment sections
+- payment history renders on-chain entries and Stellar Expert links
+- operation status card renders latest payment state
+
 ## Useful commands
 
 ```bash

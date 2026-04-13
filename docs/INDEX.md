@@ -113,6 +113,17 @@ Complete documentation reference for the DeAI platform.
 4. Post-incident: Document and update tests
 ```
 
+### 6) I want to check the active frontend deployment
+
+```
+1. Open the live URL:
+   https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
+2. Confirm core sections render:
+   Marketplace, Publish model, Payment history, Operation status
+3. Confirm Stellar Expert links are clickable in Payment history
+4. If stale content is observed, follow OPERATIONS-RUNBOOK.md troubleshooting
+```
+
 ---
 
 ## Document Details

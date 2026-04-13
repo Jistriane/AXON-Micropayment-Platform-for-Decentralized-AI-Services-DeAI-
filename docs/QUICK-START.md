@@ -113,6 +113,17 @@ curl http://localhost:8080/health
 
 Expected: `status: ok`
 
+## 6) Frontend deployment (active)
+
+Public frontend URL:
+
+- https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
+
+Verification status:
+
+- Online and functional (verified on 2026-04-13)
+- Marketplace, Publish model, Payment history, and Operation status sections available
+
 ---
 
 ## Useful commands
