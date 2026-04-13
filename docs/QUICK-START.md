@@ -113,27 +113,6 @@ curl http://localhost:8080/health
 
 Expected: `status: ok`
 
-## 6) Frontend auto-deploy (GitHub Pages)
-
-The frontend publish pipeline is automatic on `main`.
-
-Workflow details:
-
-- Workflow file: `.github/workflows/deploy-pages.yml`
-- Trigger: push to `main`
-- Build: static export of `apps/web`
-- Publish target: GitHub Pages
-
-Public URL:
-
-- https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
-
-One-time repository setup:
-
-1. Open repository settings on GitHub.
-2. Navigate to `Pages`.
-3. Set Source to `GitHub Actions`.
-
 ---
 
 ## Useful commands

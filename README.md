@@ -1,7 +1,5 @@
 # AXON - Decentralized AI Payments
 
-[![Frontend Deploy](https://github.com/Jistriane/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/Jistriane/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/actions/workflows/deploy-pages.yml)
-
 ![AXON Logo](apps/web/public/Logo.png)
 
 ![AXON Dashboard](Dashboard.png)
@@ -9,10 +7,6 @@
 ![AXON Dashboard Full](Dashord%20Complet.png)
 
 MVP monorepo for a Stellar-based agentic micropayments hackathon project.
-
-Live frontend:
-
-- https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
 
 ## Overview
 
@@ -298,21 +292,6 @@ npm run dev:real  # Web + gateway using only real settlement backends
 
 - Frontend: http://localhost:3000
 - Gateway: http://localhost:8080/health
-
-## Frontend deploy (GitHub Pages)
-
-The frontend is deployed automatically via GitHub Actions when new commits land on `main`.
-
-- Workflow: `.github/workflows/deploy-pages.yml`
-- Trigger: `push` on `main` (and manual `workflow_dispatch`)
-- Build mode: Next.js static export (`GITHUB_PAGES=true`)
-- Artifact path: `apps/web/out`
-- Public URL:
-  - https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
-
-Required repository setting:
-
-- GitHub repository `Settings > Pages > Build and deployment > Source`: `GitHub Actions`
 
 ## Useful commands
 
