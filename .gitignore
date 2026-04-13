@@ -1,6 +1,7 @@
 node_modules
 .next
 dist
+out
 coverage
 .env
 .env.*
@@ -8,6 +9,7 @@ coverage
 .DS_Store
 *.log
 .axon
+apps/web/out
 
 # Database files (Prisma)
 *.db

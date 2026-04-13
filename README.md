@@ -293,6 +293,21 @@ npm run dev:real  # Web + gateway using only real settlement backends
 - Frontend: http://localhost:3000
 - Gateway: http://localhost:8080/health
 
+## Frontend deploy (GitHub Pages)
+
+The frontend is deployed automatically via GitHub Actions when new commits land on `main`.
+
+- Workflow: `.github/workflows/deploy-pages.yml`
+- Trigger: `push` on `main` (and manual `workflow_dispatch`)
+- Build mode: Next.js static export (`GITHUB_PAGES=true`)
+- Artifact path: `apps/web/out`
+- Public URL:
+  - https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
+
+Required repository setting:
+
+- GitHub repository `Settings > Pages > Build and deployment > Source`: `GitHub Actions`
+
 ## Useful commands
 
 ```bash
