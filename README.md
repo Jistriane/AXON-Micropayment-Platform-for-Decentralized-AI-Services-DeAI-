@@ -1,5 +1,7 @@
 # AXON - Decentralized AI Payments
 
+[![Frontend Deploy](https://github.com/Jistriane/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/Jistriane/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/actions/workflows/deploy-pages.yml)
+
 ![AXON Logo](apps/web/public/Logo.png)
 
 ![AXON Dashboard](Dashboard.png)
@@ -7,6 +9,10 @@
 ![AXON Dashboard Full](Dashord%20Complet.png)
 
 MVP monorepo for a Stellar-based agentic micropayments hackathon project.
+
+Live frontend:
+
+- https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
 
 ## Overview
 
