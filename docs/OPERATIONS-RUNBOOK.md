@@ -11,6 +11,8 @@ This document is for:
 - database backup and restore
 - rollback to a known-good release
 
+It also includes the operational path for frontend publication to GitHub Pages.
+
 ## 1) Startup preflight
 
 Before starting the gateway in production:
@@ -137,6 +139,28 @@ After recovery:
 - update the release checklist if a new operational gap was found
 
 ## 6) Troubleshooting guide
+
+### Frontend page not updating on GitHub Pages
+
+**Symptoms:**
+
+- New commits were pushed to `main`, but public UI still shows old build.
+- GitHub Pages URL returns stale content or 404.
+
+**Diagnosis:**
+
+1. Check workflow `.github/workflows/deploy-pages.yml` execution in GitHub Actions.
+2. Confirm repository setting `Settings > Pages > Source` is `GitHub Actions`.
+3. Confirm workflow `Deploy Frontend to GitHub Pages` ran on the expected `main` commit.
+4. Confirm artifact upload step used `apps/web/out`.
+
+**Resolution:**
+
+- Re-run the workflow manually with `workflow_dispatch`.
+- If build fails, inspect `Build static web for Pages` logs and fix frontend build errors.
+- Validate URL after successful deploy:
+   - https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
+
 
 ### Gemini inference returns 503 INFERENCE_UNAVAILABLE
 

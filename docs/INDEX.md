@@ -99,6 +99,17 @@ Complete documentation reference for the DeAI platform.
 5. Checklist: RELEASE-CHECKLIST.md
 6. Deploy: npm run build && deploy container
 7. Monitor: GET /ops/metrics, check logs
+
+### 6) I want automatic frontend deploy on GitHub Pages
+
+```
+1. Confirm workflow exists: .github/workflows/deploy-pages.yml
+2. Push to main branch
+3. Check Actions run: "Deploy Frontend to GitHub Pages"
+4. Verify repository Pages source is "GitHub Actions"
+5. Validate public URL:
+   https://jistriane.github.io/AXON-Micropayment-Platform-for-Decentralized-AI-Services-DeAI-/
+```
 ```
 
 ### 5) Something broke in production
